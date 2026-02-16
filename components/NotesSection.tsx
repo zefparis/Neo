@@ -213,9 +213,9 @@ export function NotesSection() {
                     </div>
                   ) : (
                     <>
-                      <p className="text-sm whitespace-pre-wrap">{note.content}</p>
-                      <div className="flex items-center justify-between mt-3 pt-2 border-t border-black/10">
-                        <span className="text-[10px] text-muted-foreground">
+                      <p className="text-sm whitespace-pre-wrap text-foreground dark:text-gray-900">{note.content}</p>
+                      <div className="flex items-center justify-between mt-3 pt-2 border-t border-gray-400/30">
+                        <span className="text-[10px] text-gray-600 dark:text-gray-700">
                           {formatDate(note.createdAt)}
                         </span>
                         <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">

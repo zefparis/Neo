@@ -5,6 +5,7 @@ import { SearchBar } from "../components/SearchBar"
 import { TimeCard } from "../components/TimeCard"
 import { FavoritesSection } from "../components/FavoritesSection"
 import { ThemeToggle } from "../components/theme-toggle"
+import { Calendar } from "../components/Calendar"
 import { POPULAR_CAPITALS, ALL_CAPITALS, CityData } from "../lib/capitals"
 import { Clock, Globe } from "lucide-react"
 import { Button } from "../components/ui/button"
@@ -102,6 +103,11 @@ export default function Home() {
 
         {/* Favorites Section */}
         <FavoritesSection />
+
+        {/* Calendar Section */}
+        <section className="space-y-3 sm:space-y-4">
+          <Calendar />
+        </section>
 
         {/* Search Result (if any) */}
         {searchResult && (

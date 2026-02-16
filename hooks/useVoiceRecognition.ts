@@ -242,7 +242,7 @@ export function useVoiceRecognition(): UseVoiceRecognitionReturn {
     }
     
     const recognition = new SpeechRecognitionAPI();
-    recognition.continuous = true;
+    recognition.continuous = false;  // Single utterance mode
     recognition.interimResults = true;
     recognition.lang = "fr-FR";
     recognition.maxAlternatives = 1;
@@ -268,7 +268,7 @@ export function useVoiceRecognition(): UseVoiceRecognitionReturn {
       }
       
       if (finalTranscript) {
-        setTranscript((prev) => prev + finalTranscript);
+        setTranscript(finalTranscript);  // Don't accumulate
         const command = parseCommand(finalTranscript);
         setParsedCommand(command);
       }
@@ -290,6 +290,11 @@ export function useVoiceRecognition(): UseVoiceRecognitionReturn {
     recognition.onend = () => {
       setIsListening(false);
       setInterimTranscript("");
+      // Auto-reset transcript after a delay so parsedCommand can be processed
+      setTimeout(() => {
+        setTranscript("");
+        setParsedCommand(null);
+      }, 3000);
     };
     
     recognitionRef.current = recognition;
@@ -302,6 +307,9 @@ export function useVoiceRecognition(): UseVoiceRecognitionReturn {
   const startListening = useCallback(() => {
     if (recognitionRef.current && !isListening) {
       try {
+        setTranscript("");  // Reset on start
+        setParsedCommand(null);
+        setInterimTranscript("");
         recognitionRef.current.start();
       } catch (err) {
         setError("Erreur lors du démarrage de la reconnaissance vocale");

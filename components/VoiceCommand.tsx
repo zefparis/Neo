@@ -234,7 +234,7 @@ export function VoiceCommand({ onSearchCity }: VoiceCommandProps) {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className="flex items-center gap-2 bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-300 rounded-lg p-2 text-xs sm:text-sm"
+              className="flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-900 dark:text-green-100 rounded-lg p-2 text-xs sm:text-sm border border-green-200 dark:border-green-800"
             >
               <Check className="h-4 w-4" />
               {lastAction}

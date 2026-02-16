@@ -6,6 +6,8 @@ import { TimeCard } from "../components/TimeCard"
 import { FavoritesSection } from "../components/FavoritesSection"
 import { ThemeToggle } from "../components/theme-toggle"
 import { Calendar } from "../components/Calendar"
+import { VoiceCommand } from "../components/VoiceCommand"
+import { NotesSection } from "../components/NotesSection"
 import { POPULAR_CAPITALS, ALL_CAPITALS, CityData } from "../lib/capitals"
 import { Clock, Globe } from "lucide-react"
 import { Button } from "../components/ui/button"
@@ -108,6 +110,20 @@ export default function Home() {
         <section className="space-y-3 sm:space-y-4">
           <Calendar />
         </section>
+
+        {/* Voice Command Section */}
+        <section className="space-y-3 sm:space-y-4">
+          <VoiceCommand onSearchCity={(cityName: string) => {
+            const city = ALL_CAPITALS.find(c => 
+              c.capital.toLowerCase().includes(cityName.toLowerCase()) ||
+              c.country.toLowerCase().includes(cityName.toLowerCase())
+            )
+            if (city) handleSelectCity(city)
+          }} />
+        </section>
+
+        {/* Notes Section */}
+        <NotesSection />
 
         {/* Search Result (if any) */}
         {searchResult && (

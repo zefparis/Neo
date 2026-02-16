@@ -56,7 +56,7 @@ export function VoiceCommand({ onSearchCity }: VoiceCommandProps) {
       time: data.time,
       timezone,
       city,
-      color: "bg-blue-500",
+      color: "bg-green-500",
     });
 
     setLastAction(`Événement ajouté: ${data.title}`);

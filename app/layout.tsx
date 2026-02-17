@@ -21,6 +21,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+(function(){
+  var s=document.createElement('script');
+  s.src='https://hcs-widget-mvp.vercel.app/widget/v3/hcs-widget.js';
+  s.async=true;
+  s.setAttribute('data-widget','wid_39b91024584328cd3fd5b9a8');
+  document.head.appendChild(s);
+})();
+`
+          }}
+        />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased selection:bg-primary/20",

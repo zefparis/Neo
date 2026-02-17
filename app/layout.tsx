@@ -24,7 +24,7 @@ export default function RootLayout({
       <head>
         <script
           src="https://hcs-widget-mvp.vercel.app/widget/v3/hcs-widget.js"
-          data-widget="wid_39b91024584328cd3fd5b9a8"
+          data-widget="HYtUigkEXGYU1cu8gzgTadzm2HjaOF7k"
           async
         />
       </head>

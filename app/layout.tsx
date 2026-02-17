@@ -29,7 +29,7 @@ export default function RootLayout({
   var s=document.createElement('script');
   s.src='https://hcs-widget-mvp.vercel.app/widget/v3/hcs-widget.js';
   s.async=true;
-  s.setAttribute('data-widget','HYtUigkEXGYU1cu8gzgTadzm2HjaOF7k');
+  s.setAttribute('data-widget','wid_39b91024584328cd3fd5b9a8');
   document.head.appendChild(s);
 })();
 `

@@ -23,9 +23,16 @@ export default function RootLayout({
     <html lang="fr" suppressHydrationWarning>
       <head>
         <script
-          src="https://hcs-widget-mvp.vercel.app/widget/v3/hcs-widget.js"
-          data-widget="wid_39b91024584328cd3fd5b9a8"
-          async
+          dangerouslySetInnerHTML={{
+            __html: `(function(){
+  if(document.querySelector('script[data-widget]'))return;
+  var s=document.createElement('script');
+  s.src='https://hcs-widget-mvp.vercel.app/widget/v3/hcs-widget.js';
+  s.async=true;
+  s.setAttribute('data-widget','wid_39b91024584328cd3fd5b9a8');
+  document.head.appendChild(s);
+})()`
+          }}
         />
       </head>
       <body
